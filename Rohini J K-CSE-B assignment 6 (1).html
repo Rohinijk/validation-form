@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://127.0.0.1:5500/Ravena_IA3.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SriEshwar Conference</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SriEshwar Conference Registration Form</h1>
+    <form id="registrationForm" onsubmit="return validateForm()" action="http://127.0.0.1:5500/Results.html" target="_blank">
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="name">Name (Required):</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required="" autofocus="">
+
+            <label for="email">Email (Required):</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required="">
+
+            <label for="countryCode">Country Code (Required):</label>
+            <input type="text" id="countryCode" name="countryCode" value="+91" maxlength="4" required="">
+
+            <label for="phoneNumber">Phone Number (Required):</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required="">
+        </fieldset>
+
+        <fieldset>
+            <legend>Workshop and Additional Information</legend>
+
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName" name="companyName" placeholder="Enter your company name" maxlength="20" required="">
+
+            <label for="jobTitle">Job Title:</label>
+            <input type="text" id="jobTitle" name="jobTitle" placeholder="Enter your job title" required="">
+
+            <fieldset><legend>Gender:</legend>
+            <label><input type="radio" id="male" name="gender" value="male" required="">Male</label>
+            <label><input type="radio" id="female" name="gender" value="female" required="">Female</label>
+            <label><input type="radio" id="other" name="gender" value="other" required="">Other</label></fieldset>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age" required="" min="15" max="70">
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" placeholder="Enter your country" required="">
+
+            <label for="city">City (Required):</label>
+            <input type="text" id="city" name="city" placeholder="Enter your city" required="">
+
+            <label for="dietaryPreferences">Dietary Preferences (Optional):</label>
+            <select id="dietaryPreferences" name="dietaryPreferences" multiple="">
+             <option value="veg">Vegetarian</option>
+             <option value="nonVeg">Non-Vegetarian</option>
+            </select>
+
+            <label for="tshirtSize">T-Shirt Size:</label>
+            <select id="tshirtSize" name="tshirtSize">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+            </select>
+
+            <label for="tshirtColor">Preferred T-shirt Color:</label>
+            <input type="color" id="tshirtColor" name="tshirtColor">
+
+            <fieldset>
+                <legend>Session Preferences:</legend>
+                <label><input type="checkbox" name="sessionPreferences" value="session1">Session 1</label>
+                <label><input type="checkbox" name="sessionPreferences" value="session2">Session 2</label>
+                <label><input type="checkbox" name="sessionPreferences" value="session3">Session 3</label>
+            </fieldset>
+
+            <label for="workshopSelection">Workshop Selection:</label>
+            <select id="workshopSelection" name="workshopSelection" required="">
+            <option value="workshop1">Workshop 1</option>
+            <option value="workshop2">Workshop 2</option>
+            <option value="workshop3">Workshop 3</option>
+            </select>
+
+            <label for="workshopDate">Date of attending the workshop:</label>
+            <input type="date" id="workshopDate" name="workshopDate" required="">
+
+            <fieldset>
+                <legend>Will you bring a guest?:</legend>
+                <label><input type="radio" name="bringGuest" value="yes" required="">Yes</label>
+                <label><input type="radio" name="bringGuest" value="no" required="">No</label>
+            </fieldset>
+            
+            <label for="guestName">Guest Name:</label>
+            <input type="text" id="guestName" name="guestName" placeholder="Enter guest&#39;s name">
+             
+            <label for="guestDietaryPreferences">Guest Dietary Preferences:</label>
+            <select id="guestDietaryPreferences" name="guestDietaryPreferences" multiple="" required="">
+            <option value="veg">Vegetarian</option>
+            <option value="nonVeg">Non-Vegetarian</option>
+            </select>
+
+            <fieldset>
+                <legend>Preferred Payment Method:</legend>
+                <label><input type="radio" name="paymentMethod" value="credit" required="">Credit Card</label>
+                <label><input type="radio" name="paymentMethod" value="debit" required="">Debit Card</label>
+            </fieldset>
+ 
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" pattern="[0-9]{16}" placeholder="Enter your card number" required="">
+
+            <label for="expirationMonth">Card Expiration Date:</label>
+            <select id="expirationMonth" name="expirationMonth" required="">
+            </select>
+            <select id="expirationYear" name="expirationYear" required="">
+            </select>
+
+            <label for="cardCVV">Card CVV:</label>
+            <input type="text" id="cardCVV" name="cardCVV" pattern="[0-9]{3}" placeholder="Enter CVV" required="">
+
+            <label for="billingAddress">Billing Address:</label>
+            <textarea id="billingAddress" name="billingAddress" placeholder="Enter your billing address" required=""></textarea>
+
+            <fieldset>
+                <legend>How did you hear about us?:</legend>
+                <label><input type="checkbox" name="hearAboutUs" value="socialMedia" required="">Social Media</label>
+                <label><input type="checkbox" name="hearAboutUs" value="friend" required="">Friend</label>
+                <label><input type="checkbox" name="hearAboutUs" value="website" required="">Website</label>
+            </fieldset>
+
+            <label for="photoID">Upload Photo for ID Card:</label>
+            <input type="file" id="photoID" name="photoID" accept=".jpg" required="">
+
+            <label for="profilePDF">Collect Profile:</label>
+            <input type="file" id="profilePDF" name="profilePDF" accept=".pdf" required="" multiple="">
+
+            <label for="additionalComments">Additional Comments:</label>
+            <textarea id="additionalComments" name="additionalComments" placeholder="Enter any additional comments" required=""></textarea>
+
+
+
+            </fieldset>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <script>
+        function validateForm() {
+        
+            return false;
+        }
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+</body></html>
